@@ -23,11 +23,14 @@ class MainActivity : AppCompatActivity() {
 
         binding.buttonClear.setOnClickListener {
             words.clear()
-            binding.textViewMessage.text = ""
+            binding.textViewMessage.text = "empty"
         }
 
         binding.buttonShow.setOnClickListener {
-            binding.textViewMessage.text = words.toString()
+            if (words.size == 0)
+                binding.textViewMessage.text = "empty"
+            else
+                binding.textViewMessage.text = words.toString()
         }
     }
 }
